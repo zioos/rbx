@@ -16,7 +16,7 @@ local humanoidRootPart = character.HumanoidRootPart
 local initialCFrame = humanoidRootPart.CFrame
 
 -- Get the GiftBox parts from the workspace
-local giftBoxParts = game:GetService("Workspace").GameDebris:GetChildren()
+local giftBoxParts = game:GetService("Workspace").GameDebris.GiftBox
 
 -- Specify the TextureId that the player should not be teleported to
 local textureId = "rbxassetid://67156256"
@@ -44,6 +44,7 @@ end
 wait(0.3)
 -- Set the character's CFrame back to the initial CFrame
 humanoidRootPart.CFrame = initialCFrame
+
 
 end)
 
