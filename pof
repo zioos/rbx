@@ -34,7 +34,8 @@ humanoidRootPart.CFrame = initialCFrame
 
 end)
 
-btns:Button("BOX TP", function()
+btns:Textbox("GiftBox Notifier", "Paste webhook here!", true, function(t)
+
 
 -- Check if the current script is running in a supported exploit
 local webhookcheck =
@@ -45,7 +46,7 @@ local webhookcheck =
    "Kid with shit exploit"
 
 -- The URL of the Discord webhook
-local url = "https://discord.com/api/webhooks/1052985861454712873/4tK1hvWVPZOalh-TkXhPgExbabxGIea1nLldIRpDqZtKRWlnyFHBNXUZ4AWM_TBZVmLk"
+local url = (t)
 
 -- The message to send to the Discord webhook
 local data = {
@@ -81,6 +82,5 @@ game.workspace.GameDebris.ChildAdded:Connect(function(child)
       request(abcdef)
    end
 end)
-
 
 end)
