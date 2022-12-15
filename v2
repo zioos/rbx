@@ -1,0 +1,86 @@
+local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+
+local win = DiscordLib:Window("KindaVoids")
+
+local serv = win:Server("Box Stealer", "")
+
+local btns = serv:Channel("Scripts")
+
+btns:Button("BOX TP", function()
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character
+local humanoidRootPart = character.HumanoidRootPart
+local workspace = game:GetService("Workspace")
+
+-- Save the initial CFrame of the character
+local initialCFrame = humanoidRootPart.CFrame
+
+local giftBox = workspace.GameDebris.GiftBox
+
+-- Check if the GiftBox has a child mesh
+if giftBox:FindFirstChild("Mesh") and giftBox.Mesh then
+  -- Check if the child mesh has the specified TextureId
+  if giftBox.Mesh.TextureId ~= "rbxassetid://67156256" then
+    -- Teleport the player's character to the GiftBox
+    humanoidRootPart.CFrame = giftBox.CFrame
+  end
+end
+
+
+wait(0.3)
+-- Set the character's CFrame back to the initial CFrame
+humanoidRootPart.CFrame = initialCFrame
+
+
+end)
+
+btns:Button("BOX TP", function()
+
+-- Check if the current script is running in a supported exploit
+local webhookcheck =
+   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+   secure_load and "Sentinel" or
+   KRNL_LOADED and "Krnl" or
+   SONA_LOADED and "Sona" or
+   "Kid with shit exploit"
+
+-- The URL of the Discord webhook
+local url = "https://discord.com/api/webhooks/1052985861454712873/4tK1hvWVPZOalh-TkXhPgExbabxGIea1nLldIRpDqZtKRWlnyFHBNXUZ4AWM_TBZVmLk"
+
+-- The message to send to the Discord webhook
+local data = {
+   ["content"] = "@everyone GiftBox has Spawned in",
+}
+
+-- Encode the message as JSON
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+-- The headers for the HTTP request
+local headers = {
+   ["content-type"] = "application/json"
+}
+
+-- The function used to send the HTTP request
+local request = http_request or request or HttpPost or syn.request
+
+-- Create the HTTP request object
+local abcdef = {
+   Url = url,
+   Body = newdata,
+   Method = "POST",
+   Headers = headers
+}
+
+-- Send a test message when the script is first executed
+request(abcdef)
+
+-- Monitor the GameDebris object for new GiftBox objects
+game.workspace.GameDebris.ChildAdded:Connect(function(child)
+   if child:IsA("GiftBox") and child:FindFirstChild("Mesh") and not (child.Mesh:FindFirstChild("TextureId") and child.Mesh.TextureId.Value == "67156256") then
+      -- Send the HTTP request to the Discord webhook
+      request(abcdef)
+   end
+end)
+
+
+end)
