@@ -1,12 +1,12 @@
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 
-local win = DiscordLib:Window("discord library")
+local win = DiscordLib:Window("super duper good script")
 
-local serv = win:Server("GiftBox Stealer (romanian)", "")
+local serv = win:Server("GiftBox Stealer", "")
 
 local btns = serv:Channel("Script")
 
-btns:Button("Rob Boxes", function()
+btns:Button("Be Romanian!", function()
 
 local player = game:GetService("Players").LocalPlayer
 local character = player.Character
