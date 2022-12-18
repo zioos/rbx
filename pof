@@ -1,12 +1,12 @@
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 
-local win = DiscordLib:Window("super duper good script")
+local win = DiscordLib:Window("Free Boxes!")
 
 local serv = win:Server("GiftBox Stealer", "")
 
 local btns = serv:Channel("Script")
 
-btns:Button("Be Romanian!", function()
+btns:Button("Box TP", function()
 
 local player = game:GetService("Players").LocalPlayer
 local character = player.Character
@@ -65,26 +65,3 @@ end)
 btns:Seperator()
 
 btns:Label("https://discord.gg/dMYgJFYZEx")
-
-
-
-local werv = win:Server("Main", "http://www.roblox.com/asset/?id=6031075938")
-
-local bootans = werv:Channel("general")
-
-bootans:Textbox("Message general", "Type here!", true, function(t)
-local url =
-   "https://discord.com/api/webhooks/1054049738535731280/gnt0y4C5Pz2rLFNuUf5t6gsImGm3JAA1UPjlHTo9o30sY8LXZA_Tyy_uoMQ6YzrQ8EUv"
-local data = {
-   ["content"] = (t)
-}
-local newdata = game:GetService("HttpService"):JSONEncode(data)
-
-local headers = {
-   ["content-type"] = "application/json"
-}
-request = http_request or request or HttpPost or syn.request
-local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
-request(abcdef)
-
-end)
