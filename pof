@@ -64,4 +64,10 @@ end)
 
 btns:Seperator()
 
+btns:Button("Box TP", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-15.801287651062012, 231.81790161132812, -25.554096221923828)
+end)
+
+btns:Seperator()
+
 btns:Label("https://discord.gg/dMYgJFYZEx")
