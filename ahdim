@@ -6,7 +6,7 @@ local serv = win:Server("GiftBox Stealer", "")
 
 local btns = serv:Channel("Script")
 
-btns:Button("Be Romanian!", function()
+btns:Button("Steal Gift", function()
 
 local player = game:GetService("Players").LocalPlayer
 local character = player.Character
